@@ -1,7 +1,7 @@
 
 package com.tienda.service;
-import com.example.tienda.entity.Pais;
+import com.tienda.entity.Pais;
 import java.util.List;
-public interface IpaisService {
+public interface IPaisService {
     public List<Pais> listCountry();
 }
