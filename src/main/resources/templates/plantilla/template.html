@@ -1,4 +1,5 @@
 <html xmlns:th="http://thymeleaf.org">
+    xmlns:sec="http: //thymeleaft.org/extras/spring-security">
     <head th:fragment="head">
         <title>mi tienda</title>
         <meta charset="UTF-8">
@@ -45,16 +46,16 @@
             </div>
         </nav>
     </header>
-        <!-- CONTENIDO -->
-        
+    <!-- CONTENIDO -->
+
     <div> class="container"></div>
     <!-- FOOTER -->
     <footer class="footer">
-      <div class="container">
-        <span class="text-muted">este es el footer.</span>
-      </div>
+        <div class="container">
+            <span class="text-muted">este es el footer.</span>
+        </div>
         <a th:with="urlBuilder=${T(org.springframework.web.servlet.support.ServletUriComponentsBuilder).fromCurrentRequest()}"
-            th:href="${urlBuilder.replaceQueryParam('lang','es').toUriString()}">ES</a>
+           th:href="${urlBuilder.replaceQueryParam('lang','es').toUriString()}">ES</a>
         <a th:with="urlBuilder=${T(org.springframework.web.servlet.support.ServletUriComponentsBuilder).fromCurrentRequest()}"
            th:href="${urlBuilder.replaceQueryParam('lang','en').toUriString()}">EN</a>
     </footer>

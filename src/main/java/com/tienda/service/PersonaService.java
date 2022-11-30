@@ -1,4 +1,3 @@
-
 package com.tienda.service;
 
 import com.tienda.entity.Persona;
@@ -8,19 +7,23 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class PersonaService implements IPersonaService{
+public class PersonaService implements IPersonaService {
+
     @Autowired
     private PersonaRepository personalRepository;
+
     @Override
-    public List<Persona> getALLPersona(){
-        return (List<Persona>)personalRepository.findAll();
+    public List<Persona> getALLPersona() {
+        return (List<Persona>) personalRepository.findAll();
     }
+
     @Override
-    public void savePersona(Persona persona){
+    public void savePersona(Persona persona) {
         personalRepository.save(persona);
     }
+
     @Override
-    public void delete(long id){
+    public void delete(long id) {
         personalRepository.deleteById(id);
     }
 
@@ -29,5 +32,10 @@ public class PersonaService implements IPersonaService{
         return personalRepository.findById(id).orElse(null);
     }
 
-}
+    @Override
+    public Persona findByNombre(String nombre) {
+        return personalRepository.findByNombre(nombre);
 
+    }
+    
+}
